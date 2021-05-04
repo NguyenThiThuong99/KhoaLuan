@@ -1,0 +1,75 @@
+﻿@page
+@model LoginModel
+<div class=" container_login  ">
+    
+    <div class=" forms-container ">
+        <div class="social-media">
+            <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+        </div>
+        <div class="signin-signup">
+
+            <form id="account" method="post" class="sign-in-form">
+                <h2 class="title">Đăng Nhập</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input asp-for="Input.Email" type="text" placeholder="Email" />
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input asp-for="Input.Password" type="password" placeholder="Password" />
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            Ghi nhớ đăng nhập?
+                        </label>
+                    </div>
+                </div>*@
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
+                </div>
+
+            </form>
+
+        </div>
+
+        <div class="panels-container">
+
+            <div class="panel left-panel">
+
+                <div class="content">
+                    <h3>Welcome!!!</h3>
+                    <h4>VIET PARA - <span> Mang sức khỏe đến mọi nhà</span> </h4>
+
+
+                </div>
+                <div class="panel img-panel">
+                    <img src="~/img/—Pngtree—pharmacy medicine drugs object_6160120.png" class="image " alt="" />
+                    <img src="~/img/—Pngtree—hospital medical doctors cartoon_3932087.png" class="img_person" alt="" />
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+</div>
+
+    <script src="https://kit.fontawesome.com/64d58efce2.js"
+            crossorigin="anonymous"></script>
+

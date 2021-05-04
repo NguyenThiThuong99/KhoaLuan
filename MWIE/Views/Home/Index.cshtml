@@ -1,0 +1,151 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ScriptTablePatial"); }
+}
+@section CSS
+{
+    @{await Html.RenderPartialAsync("_StyleTablePatial"); }
+}
+
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="sparkline13-list shadow-reset">
+                    @*<div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>Danh mục</h1>
+                            <div class="sparkline13-outline-icon">
+                                <span class="sparkline13-collapse-link"><i class="fa fa-chevron-up"></i></span>
+                                <span><i class="fa fa-wrench"></i></span>
+                                <span class="sparkline13-collapse-close"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="container-fluid" style="margin-top: 49px;">
+                        <div class="row">
+                            @*<div class="col-md-2" style="text-align: center; cursor: alias;height: 250px;">
+                                <a href="/Overview/Index">
+                                    <img src="~/img/category/overview.png" width="200px" height="200px" alt="Cài đặt " style="margin: 18px; padding: 0px; background: #fff; border-radius: 50%; width: 81%;" />
+                                    <h4>Tổng quan </h4>
+                                </a>
+                            </div>*@
+                            <div class="col-md-3">
+                                <a href="/Overview/Index">
+                                    <img src="~/img/category/overview.png" width="200px" height="200px" alt="Cài đặt " style="margin: 18px; padding: 0px; background: #fff; border-radius: 50%; " />
+                                    <div class="content">
+                                        <h4>Tổng quan </h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center; ">
+                                <a href="/ImportDrug">
+                                    <img src="~/img/category/nhapkho.jpg" width="200px" height="200px" alt="Nhập kho" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%;" />
+                                    <div class="content" style="margin-top: 19%;">
+                                        <h4>Nhập kho</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center; ">
+                                <a href="/ExportDrug">
+                                    <img src="~/img/category/xuathang.png" width="200px" height="200px" alt="Xuất kho" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%; " />
+                                    <div class="content">
+                                        <h4>Xuất kho</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center; ">
+                                <a href="/Liquidation">
+                                    <img src="~/img/category/thanhly.png" width="200px" height="200px" alt="Thanh lý" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%;" />
+                                    <div class="content">
+                                        <h4>Thanh lý</h4>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-3" style="text-align: center; ">
+                                <a href="/Drug">
+                                    <img src="~/img/category/thuoc.png" width="200px" height="200px" alt="Quản lý thuốc" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%; " />
+                                    <div class="content" style="margin-top: 17%;">
+                                        <h4>Quản lý thuốc</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center;">
+                                <a href="/Producer">
+                                    <img src="~/img/category/nhacungcap.jpg" width="200px" height="200px" alt="Nhà cung cấp" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%; " />
+                                    <div class="content">
+                                        <h4>Nhà cung cấp</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center; margin-left: 130px;">
+                                <a href="/Producer">
+                                    <img src="~/img/category/khachhang.jpg" width="200px" height="500px" alt="Nhà cung cấp" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%;  " />
+                                    <div class="content">
+                                        <h4>Khách hàng</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center;">
+                                <a href="/StatisticalImport">
+                                    <img src="~/img/category/thongke1.png" width="200px" height="200px" alt="Thống kê Nhập" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%; " />
+                                    <div class="content">
+                                        <h4>Thống kê nhập</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center;">
+                                <a href="/StatisticalExport">
+                                    <img src="~/img/category/thongke2.png" width="200px" height="200px" alt="Thống kê xuất" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%; " />
+                                    <div class="content">
+                                        <h4>Thống kê xuất</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            <div class="col-md-3" style="text-align: center;">
+                                <a href="/StatisticalLiquidation">
+                                    <img src="~/img/category/thongke3.jpg" width="200px" height="200px" alt="Thống kê thanh lý " style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%;  " />
+                                    <div class="content">
+                                        <h4>Thống kê thanh lý</h4>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                if (User.Claims.FirstOrDefault(c => c.Type == "Role")?.Value == "Admin")
+                                {
+                        <div class="col-md-3" style="text-align: center; ">
+                            <a href="/ManageUser">
+                                <img src="~/img/category/nguoi.jpg" width="200px" height="200px" alt="Quản lý người dùng" style="margin: 18px; padding: 10px; background: #fff; border-radius: 50%; " />
+                                <div class="content">
+                                    <h4>Người dùng</h4>
+                                </div>
+                            </a>
+                            
+                        </div>}
+                                    }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Static Table End -->
